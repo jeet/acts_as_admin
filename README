@@ -24,5 +24,8 @@ acts_as_admin :only => [:login,:email,:address]
 acts_as_admin :except => [:created_at, :updated_at]
 
 
+open http://localhost:3000/administrator
+
+
 
 Copyright (c) 2010 [Ajay Maurya], released under the MIT license
