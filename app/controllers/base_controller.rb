@@ -1,6 +1,6 @@
 class BaseController < ApplicationController
   layout "admin_layout"
-       unloadable
+#       unloadable
   before_filter :admin_required
   
 end

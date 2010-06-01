@@ -1,9 +1,10 @@
 class AdministratorController < BaseController
-before_filter :get_mod , :only => [:show_index] 
+  before_filter :get_mod , :only => [:show_index]
+   unloadable
 
   def index
-  @mods =  [User,Keyword,Company,Brand,Product]
-    
+#  @mods =  [User,Keyword,Company,Brand,Product]
+  @mods =  Administrator.admin_classes
   end
 
   def show_index
