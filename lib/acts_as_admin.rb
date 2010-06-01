@@ -1,9 +1,8 @@
 # ActsAsAdmin
 module  Acts
   module Admin
-    CALLBACKS = []
 
-    def self.included(base) # :nodoc:
+    def self.included(base) 
       base.extend ClassMethods
     end
 

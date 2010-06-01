@@ -1,4 +1,4 @@
-<%= render :partial => "breadcrumb", :locals => {:action => "edit"}%>
+<%= render :partial => "breadcrumb", :locals => {:action => "edit",:object => @object}%>
 
 
 <% semantic_form_for  @object, :url=> update_record_admin_path(@mod.to_s,@object.id) do |form| %>
