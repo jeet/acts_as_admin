@@ -26,6 +26,7 @@ module  Acts
         write_inheritable_attribute :admin_columns, admin_cols
         write_inheritable_attribute :non_admin_columns, except
         Administrator.admin_class_names << self.to_s
+        
         extend Acts::Admin::SingletonMethods
         include Acts::Admin::InstanceMethods
 

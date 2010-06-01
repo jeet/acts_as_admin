@@ -1,0 +1,10 @@
+<div id="breadcrumb" style="font-style: oblique;color:blue  ;">
+
+<%= link_to "Home", administrators_url %>    >> <%=  action.blank? ? @mod.to_s  : (link_to @mod.to_s ,administrator_index_path(@mod.to_s)) %>
+  <% unless action.blank? %>
+  >> <%= action  %>
+
+           <% end  %>
+</div>
+
+<br />

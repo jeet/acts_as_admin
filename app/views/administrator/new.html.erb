@@ -1,3 +1,7 @@
+
+<%= render :partial => "breadcrumb", :locals => {:action => "new"}%>
+
+
 <% semantic_form_for  @object, :url=> create_record_admin_path(@mod.to_s) do |form| %>
 
     <%= form.inputs %>
