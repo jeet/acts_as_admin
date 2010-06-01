@@ -12,6 +12,7 @@ module  Acts
         return if self.included_modules.include?(Acts::Admin::InstanceMethods)
 
         class_inheritable_reader :non_admin_columns
+        class_inheritable_reader :admin_columns
         class_inheritable_reader :admin_enabled
         if options[:only]
           except = self.column_names - options[:only].flatten.map(&:to_s)
@@ -20,6 +21,9 @@ module  Acts
                     'created_at', 'updated_at', 'created_on', 'updated_on']
           except |= Array(options[:except]).collect(&:to_s) if options[:except]
         end
+        admin_cols = self.column_names - except
+
+        write_inheritable_attribute :admin_columns, admin_cols
         write_inheritable_attribute :non_admin_columns, except
         Administrator.admin_class_names << self.to_s
         extend Acts::Admin::SingletonMethods

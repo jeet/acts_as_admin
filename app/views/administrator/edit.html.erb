@@ -1,2 +1,15 @@
-<h1>Administrator#edit</h1>
-<p>Find me in app/views/administrator/edit.html.erb</p>
+<% semantic_form_for  @object, :url=> update_record_admin_path(@mod.to_s,@object.id) do |form| %>
+
+    <%= form.inputs %>
+
+
+    <% form.buttons do %>
+        <%= form.commit_button %>
+    <% end %>
+
+<% end %>
+<div>
+
+ <%= link_to @mod.to_s, administrator_index_path(@mod.to_s) %> ||
+  <%= link_to "admin home",administrators_url %>
+</div>
